@@ -1,6 +1,6 @@
 # 5. Concurrency - Parallelism & Locks
 
-Inter Process Communication (IPC)
+- Inter Process Communication (IPC)
 När olika processer som exekveras genom scheduleraren behöver kommunicera så kallar men det inter process communication.
 Det sker genom tre metoder främst:
 1: Via en fil
