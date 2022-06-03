@@ -1,2 +1,2 @@
-# Operative_System_Course
-Summary of my Operative System course. Containing definitions and summarys of Virtualization, Concurrency &amp; Persistancy
+# Operative System
+Summary of my Operative System course. Containing definitions and summaries of Virtualization, Concurrency &amp; Persistancy
