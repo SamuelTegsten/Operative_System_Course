@@ -1,2 +1,9 @@
 # Operative System
-Summary of my Operative System course. Containing definitions and summaries of Virtualization, Concurrency &amp; Persistancy
+
+## Virtualization of the CPU
+
+## Virtualization of the memory
+
+## Concurrency with lock, condition variables & semaphores
+
+## Persistancy with memory & communication
