@@ -1,30 +1,34 @@
 # 3. Virtualisering av minnet segmentering
 
-Memory virtualization
+- Memory virtualization
 Det fysiska minnet ger en viss process en del av sitt minnesutrymme & skapar en adressrymd som då är den virtualiserade minnes-rymden som processen har tillgång till.
 
-Physical vs. Virtual Address
+- Physical vs. Virtual Address
 Dess plats i minnet är egentligen i det fysiska minnet med en viss storlek men processen kan bara utnyttja adress-rymden.
 
-Transparent/Effective/Robust
+- Transparent/Effective/Robust
 Transparent: Man bör kunna hantera & synliggöra hanteringen mellan den fysiska adress platsen till den virtuella adressrymden.
+
 Effektive: Konverteringen bör ta så få resurser/tid som möjligt.
+
 Robust: Säker & isolerande från resterande processer & OS.
 
-Emulation vs. static relocation
+- Emulation vs. static relocation
 Emulation: Arbetar med en emulator som börjar i första platsen i det fysiska minnet. Den tar data som kommer in och flyttar/justerar den fysiska adressen manuellt.
 
-Static relocation:  Programmet som laddas in hanterar själv vart i minnet den ska placeras. Dock inkluderar detta också adresser som är förbjudna dvs OS,
+- Static relocation:  Programmet som laddas in hanterar själv vart i minnet den ska placeras. Dock inkluderar detta också adresser som är förbjudna dvs OS,
 
-vs. dynamic relocation
+- vs. dynamic relocation
 Med en MMU memory management unit kan en virtuell adress hanteras med base & bound register för att konvertera adresserna korrekt.
 
-Memory Management Unit (MMU)
+- Memory Management Unit (MMU)
 Fysisk hårdvara som kombineras med base & bound register för att först addera base adressen mot den virtuella adressen & sen tar MMU det värdet & jämför mot bound registret så den fortfarande har rätt storlek. Då är det den fysiska adressen som används. 
 
-Base & Bound Registers
+- Base & Bound Registers
 Base: Bas platsen som den virtuella adressen ska adderas med för att få den fysiska minnesadressen.
+
 Bound: Registret som indikerar om den virtuella minnesadressen har rätt storlek eller om den är för stor.
+
 Både lagras för varje process i sin PCB (process control block) så de kan flyttas vid varje context switch.
 
 Segmentation Model
