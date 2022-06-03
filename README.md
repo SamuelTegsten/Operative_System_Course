@@ -8,4 +8,4 @@
 
 ## Persistancy with memory & communication
 
-## FREERTOS
+## FREE-RTOS
