@@ -18,6 +18,7 @@ Systemanrop är delar som OS gör möjligt för USER att implementera då använ
 
 - Mechanisms & Policies
 Mekanismer: Är implementationen av dessa policies. 
+
 Policies: Avgör vilken aktivitet som ska köras. 
 
 - Time Sharing/Multiprogramming
@@ -25,8 +26,11 @@ Genom att virtualisera processer i mindre komponenter i den applikationsspecifik
 
 - Text, Data, Stack & Heap
 Text: Instruktioner 
+
 Data: Globala variabler
+
 Stack: Lokala variabler, returvärden, funktioner…
+
 Heap: Minnesallokering via malloc
 
 - Stack Frame (in depth)
@@ -46,6 +50,7 @@ För ett byte tillstånd mellan processen finns det en så kallad scheduler. Den
 
 - Cooperative vs. Preemptive
 Cooperative ger tillbaka Kernel vid ett yield();
+
 Preemptive har en timer som skapar en interrupt/return from trap efter en viss tidskvanta. 
 
 - Process Stat
@@ -53,7 +58,9 @@ Process status är olika tillstånds som en process kan befinna sig i. →
 
 - Ready, Running & Blocked
 Ready → Redo att exekveras
+
 Running → Exekveras
+
 Blocked → Blockerad & väntar på OS 
 
 # 2. Virtualisering av processorn II
@@ -63,39 +70,53 @@ Effektivitet vs hur många som får köra & när de får köra.
 
 - Turnaround time
 Turnaround-time = Tcompletion - Tarrival (T = Time in ms)
+
 Tcompletion → Är när processen är helt klar
+
 Tarrival → Är när processen först kommer in i scheduleraren
 
 - First Come, First Served
 FIFO → First in First out
+
 Man tar de första som kommer in och adderar de tillsammans.
+
 Turnaroundtime = Tcompletion*N+Ncompletion/N
 
 
 - Shortest Job First
 Man tar de kortaste jobben först i sekvensiering & adderar de med varandra.
+
 Turnaroundtime = Tcompletion(*N(Shortest first)/N)
 
 - Shortest time to completion first
 Man tar de kortaste jobben först som kommer in i scheduleraren.
+
 Turnaroundtime = Tcompletion*N-Tarrival*N(Time of arrival)
 
 - Response time
 Response time = Tfirst_run-Tarrival
+
 Alltså tiden från att de först kör minus tiden de kommer in.
 
 - Round Robin
 Delar upp jobben i lika stora delar så kallade time slice/quanta.
+
 Turnaroundtime = Sista blocken som blir klara.
+
 Tcompletion = Först blocken som börjar köras.
 
 - Multi-level Feedback Queue
 MLFQ:
 Består utav 5 olika regler i x olika nivåer av prioritet:
-1: Om jobb A > än job B → exekvera job A.
+
+1: Om jobb A > än job B → exekvera job A. 
+
 2: Om jobb A = job B → exekvera både med round robin.
+
 3: När ett jobb kommer in i kön, placera den alltid längst upp i prioritering
+
 4: Ett jobb får endast exekveras så länge innan den flyttas ner i prioritering
+
 5: Efter en viss tidskvanta förflyttas alla job längst upp i prioritering 
 
 - Proportional Share
@@ -106,9 +127,13 @@ Varje process som ska scheduleras ges ett stride värde. Jobbet med lägst strid
 
 - Hard vs. Soft Real Time System
 Hard: Alla deadlines utav completion måste mötas annars är det ett misslyckande.
+
 I hard real time system så vet man om alla tasks på förhand de bsrivs i triplets:
+
 e: the worst case execution for the task
+
 d: the deadline, when in the future we need to finish
+
 p: the period, how often should the task be scheduled
 
 Soft: Deadlines kan missas men applikationen ska notifieras & ta handling.
